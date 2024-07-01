@@ -1,0 +1,12 @@
+*.log
+*.fls
+*.aux
+*.fdb_latexmk
+*.py
+*.pyg
+*.bbl
+*.gz
+.DS_Store
+*.auxlock
+*.dpth
+*.md5

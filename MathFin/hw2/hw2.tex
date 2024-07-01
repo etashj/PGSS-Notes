@@ -1,0 +1,54 @@
+\documentclass[12pt,letterpaper, twocolumn]{article}
+\setlength{\marginparwidth}{2cm}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{textcomp}
+\usepackage{titlesec}
+\usepackage[colorinlistoftodos]{todonotes}
+\raggedbottom
+
+\titlespacing*{\subsubsection}
+{0pt}{1ex plus 1ex minus .2ex}{0.8ex plus .2ex}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item}
+\let\endchangemargin=\endlist
+
+\author{Etash Jhanji}
+\title{PGSS:\ Math Finance HW 2}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+    \item \begin{align*}
+        F&= \$5000\\
+        T_{mat}&= 5 \text{ years}\\
+        \text{When }t&=0\text{, }B_0= \$4300\\
+        5000 &= 4300{(1+\frac{r}{12})^{12\cdot5}}\\
+        \root{60}\of{\frac{5000}{4300}} &= 1+\frac{r}{12}\\
+        r&= 12(\root{60}\of{\frac{5000}{4300}}-1)\\
+        r&\approx 0.0302 = 3.02\%
+    \end{align*}
+    \item\begin{align*}
+        M&= \$1000\\
+        T&= 2 \text{ years}\\
+        \text{When }t&=0\text{, }M_{\text{present}}= \$925\\
+        925 &= \frac{500}{(1+\frac{r}{12})^{12}} + \frac{500}{(1+\frac{r}{12})^{24}}\\
+        \frac{925}{500} &= \frac{1}{(1+\frac{r}{12})^{12}} + \frac{1}{(1+\frac{r}{12})^{24}}\\
+        \text{Let }x &= (1+\frac{r}{12})^{12}\\
+        \frac{925}{500} &= \frac{1}{x} + \frac{1}{x^2}\\
+        \frac{925}{500}x^2 &= x + 1\\
+        0&=\frac{925}{500}x^2 - x - 1\\
+        x &= \frac{-(-1)\pm \sqrt{(-1)^2-(\frac{925}{125})(-1)}}{\frac{925}{250}}\\
+        x &= \frac{250\pm 250\sqrt{8.4}}{925}\\
+        x &\approx 1.05359\\
+        (1+\frac{r}{12})^{12} &= 1.05359\\
+        r & = 12(\root{12}\of{1.05359}-1)\\
+        r&\approx0.05232 = 5.23\%
+    \end{align*}
+\end{enumerate}
+\end{document}

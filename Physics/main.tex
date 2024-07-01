@@ -1,0 +1,211 @@
+\documentclass[12pt,letterpaper, twocolumn]{article}
+\setlength{\marginparwidth}{2cm}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\author{Etash Jhanji}
+\title{PGSS:\@ Physics Notes}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\section{Newtonian Physics}
+    \subsection{Position, Velocity, Acceleration, and Forces}
+    Given that $x(t)$ is position as a function of time, $v(t)$ is velocity against time, and $a(t)$ is acceleration as a function of time. 
+    \begin{align*}
+        v(t) &= \frac{\Delta x(t)}{\Delta t} = \frac{dx}{dt}\\
+        a(t) &= \frac{\Delta v(t)}{\Delta t} = \frac{dv}{dt}\\
+        a(t) &= \frac{d^2x}{dt^2}
+    \end{align*}
+    \begin{itemize}
+        \item[] Any change in velocity, or the rate of change of position, is acceleration and must be due to a force (Newton's 1st)
+    \end{itemize}
+    \begin{align*}
+        F&=ma\\
+        a &= \frac{F}{m}
+    \end{align*}
+    \begin{itemize}
+        \item[] Mass ($m$) is inversely proportional to acceleration and force ($F$) is directly proportional
+        \item[] Thus more force means greater acceleration and more mass means less acceleration
+    \end{itemize}
+    \begin{align*}
+        F&=G_n\frac{m_1m_2}{(x_1-x_2)^2}
+    \end{align*}
+    Where $G_n$ is the gravitation constant, $m$ is the mass of each object, and $x$ is the position of each object on a single axis, the above equation determines the force of attraction between two objects.
+    
+    \subsection{Momentum and Energy}
+    Conserved quantities which make problems simpler to solve.
+    \begin{align*}
+        p &= mv\\
+        E &= \frac{1}{2}mv^2\\
+        \Delta E &= 0 \\
+        \sum_{P} E_i^P &= \sum_{P} E_f^P 
+    \end{align*}
+
+    \subsection{Example}
+    \begin{itemize}
+        \item[Q] Two particles of equal mass oppose each other exactly and travel at the same velocity that collide, producing two particles of equal masses that also oppose each other. One of the produced particles head $\frac{\pi}{4}$ radians elevated from the x-axis. What is the speed of the two produced particles?
+        \item[A] The original particles have opposite momenta which cancel each other out giving the system a momentum of 0. Thus the produced particles will also have to have the same component momenta to cancel each other out, defined as $p=mv_f$ where $v_f$ is the final velocity of the produced particles. Using energy conservation we can also say energy is conserved from each original particle and that $v_f = v_i$. 
+    \end{itemize}
+
+\section{Coordinates and Coordinate Changes}
+\begin{itemize}
+    \item[] Frame of reference can be changed between particles to make algebraic calculations easier. 
+    \item[] Each frame of reference has different numbers for calculations
+    \item[] Well-defined relations between frames allow conversion
+    \item[] Interrelated frames create an \textit{equivalence class}. 
+\end{itemize}
+\subsection{Moving and and relating frames}
+\begin{itemize}
+    \item Given two frames $s$ and $s'$ where over time the frame $s'$ moves in the positive x direction over time at a constant velocity 
+    \item[Note] Visualize these two frames as a 2D set of axes with position ($x$) on the x-axis and time ($t$) on the y-axis. THey start off on top of each other at $t=0$ before diverging. 
+    \item We know that $t=t'$ because time is a constant
+    \item However we do not know the relation between $x$ and $x'$
+    \item We can determine $x \rightarrow x'(t') = x'(t) = x(t) -v_s t$
+    \item Considering $x$ and $t$ as vectors. 
+    \begin{align*}
+        \begin{pmatrix}
+               x' \\
+               t' 
+             \end{pmatrix}
+             &=  \begin{pmatrix}
+                x \\
+                t 
+              \end{pmatrix}
+              \begin{pmatrix}
+                1 & -v_s \\
+                0 & 1 
+              \end{pmatrix}
+      \end{align*}
+      \item Now given frames $x$, $x'$, and $x''$ where $x'$ moves relative to $x$ with a velocity of $v_1$ and $x''$ moves relative to $x'$ with a velocity of $v_2$
+      \item To determine the position of $x''$ we can use the following
+      \begin{align*}
+        \begin{pmatrix}
+            x''\\t''
+        \end{pmatrix} &=
+        \begin{pmatrix}
+            1&-v_2\\0&1
+        \end{pmatrix}
+        \begin{pmatrix}
+            1&-v_1\\0&1
+        \end{pmatrix}
+        \begin{pmatrix}
+            v\\t
+        \end{pmatrix}
+        \\
+        &=\begin{pmatrix}
+            1&-v_1-v_2\\0&1
+        \end{pmatrix}\begin{pmatrix}
+            v\\t
+        \end{pmatrix}\\
+        &= \begin{pmatrix}
+            1&-v_c\\0&1
+        \end{pmatrix}\begin{pmatrix}
+            v\\t
+        \end{pmatrix}\\
+        &= \begin{pmatrix}
+            x-v_c t\\t
+        \end{pmatrix}
+    \end {align*}
+      \item You can also write the matrix as a \textit{Galilean Transformation}
+      \begin{align*}
+        G(v_s) &= \begin{pmatrix}
+            1&v_s\\0&1
+        \end{pmatrix}\\
+        G(v_2) \cdot G(v_1) &= G(v_1+v_2)
+      \end{align*}
+      \item In rotates frames where one frame is turned $\theta$ you can use the following equations
+      \begin{align*}
+        x' &=\cos\theta x + \sin\theta y\\
+        y' &=\sin\theta x + \cos\theta y\\
+        \begin{pmatrix}x'\\y'\end{pmatrix} &= \begin{pmatrix}\cos\theta&\sin\theta\\-\sin\theta&\cos\theta\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}\\
+        R(\theta) &=\begin{pmatrix}\cos\theta&\sin\theta\\-\sin\theta&\cos\theta\end{pmatrix}\\
+        R(\theta_1) + R(\theta_2) &= R(\theta_1+\theta_2)
+      \end{align*}
+\end{itemize}
+
+\subsection{How the physics changes in inertial frames}
+\begin{align*}
+    x'&={v_s}t\\
+    F(|x_1-x_2|) &= F'(|x_1'-x_2'|)\\
+    x_1' &= x_1-{v_s}t\\
+    x_2' &= x_2-{v_s}t\\
+    x_1' - x_2' &= x_1 - x_2\\
+    m &= m'\\
+    v_1' &= \frac{dx}{dt} = \frac{\Delta(x_1-{v_s}t)}{\Delta t}\\
+    &= v_1-v_s\\
+    a_1' &= \frac{\Delta v_1'}{\Delta t} = \frac{\Delta (v_1-v_s)}{\Delta t}\\
+    &=\frac{\Delta v_1}{\Delta t} - \frac{\Delta v_s}{\Delta t} = a\\
+    a_1' &= a\\
+\end{align*}
+\textit{Note} If $F=ma$ (and momentum and energy) applied in one frame it applies in all others. 
+
+\subsection{Why it doesn't work}
+\begin{itemize}
+    \item Electromagnetism
+        \item changing electromagnetic fields can alter forces
+        \item Speed of light: $c' = c-v_s$ breaking the constant velocity of light
+    \item Determinism
+    \item General coordinate transformations
+    \item Experimentally untrue (Michaelson and Morely)
+\end{itemize}
+
+\subsection{Linear Experiments}
+\begin{itemize}
+    \item \begin{align*}
+        x&= ax' + bt'\\
+        t&= ex'+ft'
+    \end{align*}
+    \item When $x'=0$, $x={v_s}t$
+    \item When $x=0$, $x=-{v_s}t$
+    \item OR \begin{align*}
+        \begin{pmatrix}x\\t\end{pmatrix} &= \begin{pmatrix}x&b\\e&f\end{pmatrix}\begin{pmatrix}x'\\t'\end{pmatrix}
+    \end{align*}
+    \item \begin{align*}
+        T(v_2)T(v_1) &= T(v_c)\\
+        T(-v)T(v) &= T(0)
+    \end{align*}
+    \item The entire scenario is parametrized by $v_*$ \begin{align*}
+        \begin{pmatrix}x\\t\end{pmatrix} &= \frac{1}{\sqrt{1-(\frac{v_1}{v_*})^2}}\begin{pmatrix}1&v_s\\\frac{v_s}{v_*^2} & 1\end{pmatrix}\begin{pmatrix}x'\\t'\end{pmatrix}\\
+        v_* &= \infty\\
+        x' &= v_{*}t' \rightarrow x = v_{*}t
+    \end{align*}
+\end{itemize}
+
+\section{Matrices Crash Course}
+\begin{align*}
+    \begin{pmatrix}
+        a_{11} & a_{12} \\
+        a_{21} & a_{22} 
+      \end{pmatrix}
+      \begin{pmatrix}
+        c_1\\c_2
+      \end{pmatrix} &=
+      \begin{pmatrix}
+        a_{11}c_1+a_{12}c_2\\
+        a_{21}c_1+a_{22}c_2
+      \end{pmatrix}\\\\
+      \begin{pmatrix}
+        a_{11} & a_{12} \\
+        a_{21} & a_{22} 
+      \end{pmatrix}
+      \begin{pmatrix}
+        b_{11} & b_{12} \\
+        b_{21} & b_{22} 
+      \end{pmatrix} &=
+      \begin{pmatrix}
+        a_{11}b_{11} + a_{12}b_{21} & a_{11}b_{12} + a_{12}b_{22} \\
+        a_{21}b_{11} + a_{22}b_{21} & a_{21}b_{12} + a_{22}b_{22} \\
+      \end{pmatrix}
+\end{align*}
+\section{Principles of Relativity}
+
+
+\end{document}

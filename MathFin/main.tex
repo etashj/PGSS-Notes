@@ -1,0 +1,150 @@
+\documentclass[12pt,letterpaper, twocolumn]{article}
+\setlength{\marginparwidth}{2cm}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{textcomp}
+\usepackage{titlesec}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\titlespacing*{\subsubsection}
+{0pt}{1ex plus 1ex minus .2ex}{0.8ex plus .2ex}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item}
+\let\endchangemargin=\endlist
+
+\author{Etash Jhanji}
+\title{PGSS:\ Math Finance Notes}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\section{Asset Classes}
+The class will focus on assets which are indistinguishable from each other in terms of uniqueness (i.e.\ one share of a stock is identical to another). \! indicates a topic we will focus on and? indicates one that may be applicable. 
+    \begin{itemize}
+        \setlength\itemsep{0.5em}
+        \item Real Estate
+        \item[!] Cash/Currencies
+        \item[!] Stocks \textrightarrow{} Equities
+        \item Artwork \textrightarrow{} Collectibles 
+        \item Vehicles \textrightarrow{} Durable goods
+        \item[!] Certificates of Deposit (CDs) \& Bonds \textrightarrow{} Fixed Income
+        \item[?] Cryptocurrencies
+        \item NFTs
+        \item[?] Precious metals \textrightarrow{} Commodities
+    \end{itemize}
+
+\section{Trading}
+\begin{itemize}
+    \setlength\itemsep{0.25em}
+    \item The lowest selling price on a share is the \textbf{Asking Price}. 
+    \item The highest buying price on a share is the \textbf{Bid Price}. 
+    \item The \textbf{Bid-Ask spread} is the difference between bid price and ask price. 
+    \item The bid-ask spread tends to be smaller in actively traded, larger stocks. 
+\end{itemize}
+\subsubsection*{Derivative Securities}
+Securities that derive value from the values of other assets. 
+\subsubsection*{Forward Contract}
+An agreement on the parameters of an exchange at a specific date before that date. 
+\subsubsection*{Call/Stock Options}
+Gives a person the right (not an obligation) to sell an assets for a particular price on a particular day. 
+\subsubsection*{Put Options}
+Gives the right (but not the obligation) to sell an asset. 
+
+\section{Mathematical Models of Financial Markets}
+\subsection*{Assumptions}
+\begin{enumerate}
+    \item Single price to buy or sell (no bid-ask spread)
+    \item Can buy or sell any amount without moving the price
+    \item No trading fees
+    \item No taxes
+\end{enumerate} 
+
+\section{Interest}
+\begin{itemize}
+\item Borrow some amount (\textbf{Principal})
+\item Pay back at some later datePay an extra amount (\textbf{Interest})
+\item Borrow $P$, repay $P+I$ at time $T>0$ (\textbf{maturity}) at $t=0$
+\end{itemize}
+\subsection*{Why do banks charge interest on loans? }
+\begin{enumerate}
+    \item To compensate for default risk
+    \item To compensate for inflation risk
+    \item `Time value of money'
+    \item Compensate for `opportunity cost'
+\end{enumerate}
+\subsection*{Why do banks pay interest on deposits? }
+Investors demand it
+\subsection*{Why do banks accept deposits? }
+To borrow at a low interest rate and loan at a higher rate using your money
+\subsection{Interest Payments}
+\subsubsection{Simple Interest}
+\begin{itemize}
+    \item Proportional to the size of the principal
+    \item Proportional to the loaning period length
+\end{itemize}
+Given a loan with principal $P$, maturity $T$, and interest rate $r$ where maturity is in years: principal is in dollars (or some other currency), and the interest rate is a rate in units $\frac{1}{\text{year}}$
+The formula for the total interest paid would be as follows: 
+\begin{align*}
+    I &= r \text{[$\frac{1}{\text{year}}$]} \cdot P \text{[\$]} \cdot T \text{[years]}\\
+    I &= rPT \text{[\$]}
+\end{align*}
+The total payment would be
+\begin{align*}
+    P + I &= P + rPT\\
+    P + I &= P(1+rT)
+\end{align*}
+\textit{Note} These principles assume simple interest
+
+Interest is earned uniformly throughout the loan. 
+i.e. $A_0$ borrowed at $t=0$ grows to $A_t=(1+rT)A_0$
+
+\subsubsection{Compound Interest}
+Interest is \textit{compounded} to the interest during the loan. 
+\\\\\\\textbf{Example}\\
+\$100 borrowed for 1 year at interest rate $r$ compounded quarterly (3 months)
+\begin{align*}
+    A_0 &= \text{\$}100\\
+    t &= \frac{1}{4}\\
+    A_{\frac{1}{4}} &= 100 + (\frac{100}{4})r\\
+    A_{\frac{1}{4}} &= 100(1 + \frac{r}{4})\\
+    \text{The above}& \text{ becomes the new principal}\\
+    t &= \frac{1}{2}\\
+    A_{\frac{1}{2}} &= [100(1 + \frac{r}{4})] + \frac{r}{4}[100(1 + \frac{r}{4})]\\
+    A_{\frac{1}{2}} &= (1 + \frac{r}{4})[100(1 + \frac{r}{4})]\\
+    A_{\frac{1}{2}} &= 100(1 + \frac{r}{4})^2\\
+    \text{The above}& \text{ becomes the new principal again}\\
+    t &= \frac{3}{4}\\
+    A_{\frac{3}{4}} &= (1 + \frac{r}{4})[100(1 + \frac{r}{4})^2]\\
+    A_{\frac{3}{4}} &= 100(1 + \frac{r}{4})^3\\
+    \text{The above}& \text{ becomes the new principal again}\\
+    A_{1} &= 100(1 + \frac{r}{4})^4\\
+    \text{More}&\text{ generally}\\
+    A_T &= A_0(1+\frac{r}{m})^{mT}\\
+    \text{Where $m$}& \text{ is the number of compounding} \\&\text{periods per year}
+\end{align*}
+Compound interest allows for exponential growth of interest. 
+\\\\
+The \textit{quoted} interest rate depends on the compounding convention even if payments are the same. 
+
+\subsubsection{Negative Rates}
+\begin{itemize}
+    \item Interests rates can be negative
+    \item But $(1+\frac{r}{12})^{12T}$ must be positive
+    \item Thus mathematically $r>-12$
+\end{itemize}
+
+\subsection{The time value of money}
+If you were to receive \$1000 one year from now, what is the value of that future payment today? 
+\\\\
+\textit{Note} A deposit of $\frac{1000}{(1+\frac{r}{12})^{12}}$ it will grow to $(\frac{1000}{(1+\frac{r}{12})^{12}})(1+\frac{r}{12})^{12}$ or \$1000 at $t=1$
+\\\\
+We say $\frac{1000}{(1+\frac{r}{12})^{12}}$ is the \textbf{present value} of 1000 to be paid one year from now. Thus you can take a loan for that amount and pay off the loan with interest using the credit from the \$1000 you are to receive in a year (it all cancels). 
+\\\\
+For the present value of several payments,  add up the values of each individual payment
+\end{document}
