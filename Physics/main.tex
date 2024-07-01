@@ -6,6 +6,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{tikz}
+\usepackage{mathtools}
 \usepackage[colorinlistoftodos]{todonotes}
 
 \author{Etash Jhanji}
@@ -174,13 +175,14 @@
     \end{align*}
     \item The entire scenario is parametrized by $v_*$ \begin{align*}
         \begin{pmatrix}x\\t\end{pmatrix} &= \frac{1}{\sqrt{1-(\frac{v_1}{v_*})^2}}\begin{pmatrix}1&v_s\\\frac{v_s}{v_*^2} & 1\end{pmatrix}\begin{pmatrix}x'\\t'\end{pmatrix}\\
-        v_* &= \infty\\
+        \text{In Galilean: }v_* &= \infty\\
         x' &= v_{*}t' \rightarrow x = v_{*}t
     \end{align*}
 \end{itemize}
 
 \section{Matrices Crash Course}
 \begin{align*}
+    \begin{multlined}[t]
     \begin{pmatrix}
         a_{11} & a_{12} \\
         a_{21} & a_{22} 
@@ -191,7 +193,10 @@
       \begin{pmatrix}
         a_{11}c_1+a_{12}c_2\\
         a_{21}c_1+a_{22}c_2
-      \end{pmatrix}\\\\
+      \end{pmatrix}
+    \end{multlined}
+      \\\\
+      \begin{multlined}[t]
       \begin{pmatrix}
         a_{11} & a_{12} \\
         a_{21} & a_{22} 
@@ -204,8 +209,65 @@
         a_{11}b_{11} + a_{12}b_{21} & a_{11}b_{12} + a_{12}b_{22} \\
         a_{21}b_{11} + a_{22}b_{21} & a_{21}b_{12} + a_{22}b_{22} \\
       \end{pmatrix}
+    \end{multlined}
 \end{align*}
+
 \section{Principles of Relativity}
+\begin{itemize}
+    \item Given a flash of light at a point, the photons leave the point at a constant speed $c$
+    \item If an observer is moving towards the light, it should appear that it is going faster than $c$ whereas moving away should indicate movement slower than $c$, however this is not the case 
+\end{itemize}
+\subsection{Units Analogy}
+\begin{itemize}
+    \item Two surveying contractors are surveying CMU
+    \item One set of surveyors views the campus from a frame on the $x$ axis and the other from a rotated frame on the $x'$ axis
+    \item The differing orientations of the frames cause the surveyors to measure different distances and angles with different coordinates
+    \item Hypothetically company 1 is composed on engineers and 2 is chemists
+    \item Lets say the surveyors use meters for x distance and miles for the y distance. 
+    \item The physics student (our hero) determines a conversion factor $k$ to convert between the two frames and measurements. 
+    \item $k=\frac{\text{m}}{\text{miles}}$
+    \item Dist: $\sqrt{x^2+(ky)^2}=\sqrt{x'^2+(ky')^2}$
+\end{itemize}
+\subsection{For Relativity}
+\begin{itemize}
+    \item Instead of measuring t in seconds, we will make $[t]=[ct]$ so that we have units of meters and all coordinates are in meters. 
+\end{itemize}
+\subsection{Example}
+\begin{align*}
+    (ct, x, y, x) &\rightarrow (ct', x', y', z')\\
+    y&=y'\\
+    z&=z'
+\end{align*}
+Only x movement is the simplest case. 
+\subsection{Light clock}
+\begin{itemize}
+    \item Given a clock which uses the speed of light against a mirror to measure a tick from light omission at time $A$ and reception at time $B$. 
+    \item Put this on a rocket. The entire frame is now moving and the light instead of being up and down now moves to the right simultaneously in an externally observational frame
+    \item In the rocket frame however, the clock is the same and $\Delta x=0$
+    \item \begin{align*}
+        t&=t'=0\\
+        x_A&=0\\
+        t_A&=0\\
+        \text{In rocket}\\
+        x'_A&=0\\
+        t'_B&=2m\\
+        \Delta x'=0\\
+        \Delta t'&=2m\\
+        \text{Lab frame}\\
+        \Delta x &> 0\\
+        \Delta t &= 2\sqrt{1+\frac{\Delta x}{x}^2}\\
+        \Delta t &> \Delta t'\\ 
+    \end{align*}
+    Moving clocks run slow
+
+    \textit{Note} \begin{align*}
+        \Delta t^2-\Delta x^2 &= 4(1+(\frac{\Delta x}{2})^2)-\Delta x^2\\
+        &= 4
+    \end{align*}
+    \begin{align*}
+        \Delta t'^2-\Delta x'^2&\equiv (\text{Integral})^2
+    \end{align*}
+\end{itemize}
 
 
 \end{document}
