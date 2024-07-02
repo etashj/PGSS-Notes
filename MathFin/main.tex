@@ -147,4 +147,28 @@ If you were to receive \$1000 one year from now, what is the value of that futur
 We say $\frac{1000}{(1+\frac{r}{12})^{12}}$ is the \textbf{present value} of 1000 to be paid one year from now. Thus you can take a loan for that amount and pay off the loan with interest using the credit from the \$1000 you are to receive in a year (it all cancels). 
 \\\\
 For the present value of several payments,  add up the values of each individual payment
+
+\subsection{Fixed Income Securities}
+\subsubsection{Zero Coupon Bonds}
+\textbf{Zero Coupon Bonds} make a single payment at a single time. They pay a face value $f$ at the maturity $T>0$. 
+
+If we have a bank with interest rate $r$ the discounted present value of the ZCB is $P_0 = \frac{F}{(1+\frac{r}{12})^12T}$. 
+
+If we deposit $A_0 = \frac{F}{(1+\frac{r}{12})^12T}$ at $t=0$ until $T_1$ then $A_T = F$. 
+
+\subsubsection{Annuities}
+An \textbf{annuity} is a series of same-sized payments made at regular intervals. It will make payments of \$$A$, $m$ times per year, for $T$ years
+\\\\
+\textit{Example}
+An annuity makes payments of \$200 for 2 years. To rewrite it, you could make it a sum of ZCBs, each being a month apart from each other in 24 fixed payments (emulating the annuity). 
+\\\\
+This makes the present value of an annuity be
+ \[P_0^A = \sum_{i=1}^{24}\frac{200}{(1+\frac{r}{12})^i}\]
+
+
+\textit{Example}
+An annuity makes payments of \$500 quarterly for 1 year. The net present value is $P_0^{A_2}= \frac{500}{(1+\frac{r}{12})^3} + \frac{500}{(1+\frac{r}{12})^6} + \frac{500}{(1+\frac{r}{12})^9} + \frac{500}{(1+\frac{r}{12})^{12}}$ or $\sum_{i=1}^{4}\frac{500}{(1+\frac{r}{12})^{3i}}$
+
+\subsection{Untitled}
+\subsubsection{Coupon Bonds}
 \end{document}
