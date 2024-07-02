@@ -182,7 +182,6 @@
 
 \section{Matrices Crash Course}
 \begin{align*}
-    \begin{multlined}[t]
     \begin{pmatrix}
         a_{11} & a_{12} \\
         a_{21} & a_{22} 
@@ -194,9 +193,7 @@
         a_{11}c_1+a_{12}c_2\\
         a_{21}c_1+a_{22}c_2
       \end{pmatrix}
-    \end{multlined}
-      \\\\
-      \begin{multlined}[t]
+      \\
       \begin{pmatrix}
         a_{11} & a_{12} \\
         a_{21} & a_{22} 
@@ -209,7 +206,6 @@
         a_{11}b_{11} + a_{12}b_{21} & a_{11}b_{12} + a_{12}b_{22} \\
         a_{21}b_{11} + a_{22}b_{21} & a_{21}b_{12} + a_{22}b_{22} \\
       \end{pmatrix}
-    \end{multlined}
 \end{align*}
 
 \section{Principles of Relativity}
@@ -251,23 +247,36 @@ Only x movement is the simplest case.
         \text{In rocket}\\
         x'_A&=0\\
         t'_B&=2m\\
-        \Delta x'=0\\
+        \Delta x'&=0\\
         \Delta t'&=2m\\
         \text{Lab frame}\\
         \Delta x &> 0\\
         \Delta t &= 2\sqrt{1+\frac{\Delta x}{x}^2}\\
         \Delta t &> \Delta t'\\ 
     \end{align*}
-    Moving clocks run slow
+    Moving clocks run slow. 
 
     \textit{Note} \begin{align*}
         \Delta t^2-\Delta x^2 &= 4(1+(\frac{\Delta x}{2})^2)-\Delta x^2\\
         &= 4
     \end{align*}
     \begin{align*}
-        \Delta t'^2-\Delta x'^2&\equiv (\text{Integral})^2
+        \Delta t'^2-\Delta x'^2&\equiv (\text{Interval})^2\\
+        \Delta x^2-\Delta y^2&\equiv (\text{length})^2
     \end{align*}
+    i.e. The sums form a hyperbola and  circle with a radius of length, respectively. 
 \end{itemize}
 
+\vfill\null
+\subsection*{Lorenz Geometry}
+When the interval ($\Delta t^2 - \Delta x^2$) is 
+\begin{itemize}
+    \item[$< 0$] it is `time-like'
+    \item[$= 0$] it is `light-like'
+    \item[$> 0$] it is `space-like'
+\end{itemize}
+This is a physical property of two events.
+
+\textit{Note} in Euclidean Geometry a straight path is shorter than a curved path whereas in Lorenz Geometry a curved path is shorter than a straight path.
 
 \end{document}
