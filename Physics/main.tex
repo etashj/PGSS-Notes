@@ -304,4 +304,39 @@ In a Lorenz transformation, y velocity takes the form $\beta_y=\frac{\Delta y}{\
     \beta_x &= \frac{\beta_x' + \beta}{1+\beta\beta_x}
 \end{align*}
 
+\subsection{Applications of Lorenz Transformations}
+\subsubsection*{The Train Paradox}
+\begin{itemize}
+    \item A train is moving at a relativistic speed
+    \item There is a person on the train $o'$ who is moving at the same speed as the train and another observer $o$ who is stationary and the two line up
+    \item Each one lights a bulb at the same time, and the lights cross at the same spot (where the observers are) in the train and stationary frames
+    \item So which light bulb went off first? 
+    \item First we consider the prime frame ($s'$)
+    \begin{itemize}
+        \item The light collides at $x'=0$ and $t'=0$
+        \item Relative to the observer in the train, the bulbs are at rest, and the light moves at a constant speed, appearing as opposing 45 degree lines on a graph
+    \end{itemize}
+    \item And now the stationary, $s$, frame
+    \begin{itemize}
+        \item The bulbs are moving to this observer moving in parallel, yet he sees that they collide at the same time. 
+        \item Observer $o$ sees the light from one light bulb go farther, thus it must have gone off first  
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{The Twin Paradox}
+\begin{itemize}
+    \item Given two identical twins, one stays on Earth and the other goes on a relativistic journey
+    \item Hypothetically the space twin goes out for $\tau$ years and spends the same time coming back.
+    \item By the time the space twin returns he has aged $2\tau$ years
+    \item How is the Earth twin aging? 
+    \item \begin{align*}
+        \begin{pmatrix}\Delta x\\ \Delta t\end{pmatrix} &= \begin{pmatrix}\gamma & \beta \gamma\\ \beta \gamma & \gamma\end{pmatrix}\begin{pmatrix}0\\2\tau\end{pmatrix}\\
+        \Delta t_{t_2} &= 2\tau \cdot \gamma\\
+        \tau &= 5\text{y}\\
+        \gamma &= 10\\
+        w_{v1} &= 10\text{y}\\
+        w_{v2} &= 100\text{y}\\
+    \end{align*}
+\end{itemize}
+
 \end{document}
