@@ -148,6 +148,24 @@ We say $\frac{1000}{(1+\frac{r}{12})^{12}}$ is the \textbf{present value} of 100
 \\\\
 For the present value of several payments,  add up the values of each individual payment
 
+\subsection{as it Relates to Maturities}
+Interest rates depend on maturity. 
+\begin{itemize}
+    \item if we make a deposit from $t=0$ to $t=1$ or from $t=0$ to $t=5$
+    \item Interest rates will be different
+    \item The notation is for matruity $T$ is $r=r(T)$
+    \item e.g. Two year ZCB with a face of \$1000
+    \begin{align*}
+        P^{Z} = \frac{F}{(1+\frac{r(2)(12)}{12})^{12\cdot2}}\\
+        P^{Z} = \frac{1000}{(1+\frac{r(2)(12)}{12})^{24}}\\
+    \end{align*}
+\end{itemize}
+An annurity makes monthly payments of \$100 for 5 years. 
+\begin{align*}
+    P^A&=\frac{100}{(1+\frac{r{1/12}}{12})^1} + \dots + \frac{100}{(1+\frac{r{5}}{12})^12\cdot5}
+\end{align*}
+Typically $r(t)$ follows a logarithmic function where longer periods require higher interest. However, some \textit{inverted yield curves} decrease as time increases. 
+
 \section{Fixed Income Securities}
 \subsection{Zero Coupon Bonds}
 \textbf{Zero Coupon Bonds} make a single payment at a single time. They pay a face value $f$ at the maturity $T>0$. 
@@ -169,9 +187,6 @@ This makes the present value of an annuity be
 \textit{Example}
 An annuity makes payments of \$500 quarterly for 1 year. The net present value is $P_0^{A_2}= \frac{500}{(1+\frac{r}{12})^3} + \frac{500}{(1+\frac{r}{12})^6} + \frac{500}{(1+\frac{r}{12})^9} + \frac{500}{(1+\frac{r}{12})^{12}}$ or $\sum_{i=1}^{4}\frac{500}{(1+\frac{r}{12})^{3i}}$
 
-\subsection{Coupon Bonds}
-To be completed
-
 \section{Portfolios}
 A \textbf{portfolio} is a collection of assets and and rules for trading among them. In mathematical finance it is generally thought of as a situation fo assets bought and sold at specific times. 
 
@@ -179,6 +194,85 @@ If we were to use $X$ as a label for a portfolio, then $X_t$ is the value of the
 
 \subsection{Arbitrage}
 A potential for risk free profit. 
-An \textbf{arbitrage portfolio} is defines as a portfolio $X$ such that $X_0 = 0$ and $X_T \geq 0$ with $X_T > 0$ is possible.
+An \textbf{arbitrage portfolio} is defines as a portfolio $X$ such that $X_0 = 0$ and $X_T \geq 0$ with $X_T > 0$ is possible. It is, in essence, free lunch and as we know there are no free lunches (THANSTAAFL). 
 
+Although arbitrage is possible in small and difficult to obtain amounts in real markets, we will assume they don't exist in our market. 
+
+\subsubsection{Arbitrage of ZCBs}
+What is the arbitrage price of a zero coupon bond? Given face value $F$, maturity $T$, interest rate $r$
+\begin{align*}P&=\frac{F}{(1+\frac{r}{12})^{12T}}\end{align*}
+
+\subsubsection*{Example}
+\textbf{Buying.} 
+\begin{align*}
+    F &= \$1000\\
+    T&= 5\text{ years}\\
+    r&= 0.04\\
+    P&= \frac{1000}{(1+\frac{0.04}{12})^{12\cdot 5}}\\
+    P&= \$819.0031
+\end{align*}
+\$819 is the arbitrage-free price of the ZCB.
+\\\\
+Suppose we can buy or sell the bond for $\hat{P}=815<P$. In Portfolio $X$ we can borrow 815 from the bank and buy the bond. 
+\begin{align*}
+    X_0 &= [\text{bond}] - [\text{loan amount}]\\
+    X_0 &= 815-815\\
+    X_0 &= 0\\
+\end{align*}
+\begin{align*}
+    X_5 &= [\text{bond after maturity}] - [\text{loan amount}]\\
+    X_5 &= 1000-815(1+\frac{.04}{12})^{12\cdot5}\\
+    X_5 &= \$4.89\\
+    X_5 &> 0
+\end{align*}
+After 5 years you have made a profit of \$4.89, creating an arbitrage since the bond's purchase price was lower than its present value. 
+
+\subsubsection*{Example}
+\textbf{Selling.} 
+Suppose we can buy or sell the bond for $P=\$825$. In portfolio $X$ we can sell the bond and deposit the proceeds in the bank. 
+\begin{align*}
+    X_0 &= -[\text{bond}] + [\text{deposit amount}]\\
+    X_0 &= -825-825\\
+    X_0 &= 0\\
+\end{align*}
+\begin{align*}
+    X_5 &= -[\text{mature bond}] + [\text{deposit and interest}]\\
+    X_5 &= -1000+825(1+\frac{.04}{12})^{12\cdot5}\\
+    X_5 &= \$7.32\\
+    X_5 &> 0
+\end{align*}
+
+If $\hat{P} \neq P$ then there is an Arbitrage opportunity. THe arbitrage free price is $\hat{P} = P$ where $P$ is the discounted present value. 
+
+\subsection{The Law of One Price}
+Suppose there is no arbitrage and you have two portfolios, $X$ and $Y$, of fixed income securities that make all the same payments at all the same times. Then $X_0 = Y_0$.
+\\\\\textbf{Proof}\\
+Suppose $X_0 \neq Y_0$ ($X_0 < Y_0$)\\
+Then you should buy $X$ and sell $Y$\\
+Deposit $Y_0 - X_0 <0$ in the bank until $T>0$\\
+Let this portfolio be called $Z$. \\
+\begin{align*}
+    Z_0 &= X_0 - Y_0 + (Y_0 - X_0)\\
+    Z_0 &= 0
+\end{align*}
+There is no net cash flow as they all cancel except of the deposity is $>0$. 
+
+\subsection{Coupon Bonds}
+Has a face value $F$, a maturity $T$, maturity $m$, and a coupon rate $q$. The coupon rate is the rate of interest paid on the face value.
+\\It makes payments as follows:
+\begin{align*}
+    C&= F \cdot \frac{q}{m} \text{ at } \frac{1}{m}, \frac{2}{m}, \dots\\
+\end{align*}
+At $t=T$ it pays $C+F = F(1+\frac{q}{m})$.
+\\\\
+This can be replicated with a portfolio of ZCBs with face values $C$ and maturities $\frac{1}{m}, \frac{2}{m}, \dots$ and a ZCB with face value $F+C$ maturing at $T$. \\
+
+The arbitrage free price of a coupon bnd must be the sum of the arbitrage free prices of the ZCBs. 
+
+\begin{align*}
+    P^{\text{CB}} &= \frac{C}{(1+\frac{r}{m})^1} + \dots + \frac{C}{(1+\frac{r}{m})^{mT-1}} + \frac{F+C}{(1+\frac{r}{m})^{mT}}\\
+    P^{\text{CB}} &= \sum_{i=1}^{mT}\frac{C}{(1+\frac{r}{m})^i} + \frac{F}{(1+\frac{r}{m})^{mT}}
+\end{align*}
+
+To find an arbitrage free price find a portfolio $X$ of securities who's prices are known that replicates the payments of the securities. The arbitrage free price is the initial capital of the portfolio. We say $X$ is a \textbf{replicating portfolio} of the security. Because of the \textit{Law of One Price} the replicating portfolios must have the same initial capital. 
 \end{document}
