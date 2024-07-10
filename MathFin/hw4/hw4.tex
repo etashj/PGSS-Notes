@@ -1,0 +1,55 @@
+\documentclass[11pt,letterpaper]{article}
+\setlength{\marginparwidth}{2cm}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{textcomp}
+\usepackage{titlesec}
+\usepackage[colorinlistoftodos]{todonotes}
+\raggedbottom
+
+\titlespacing*{\subsubsection}
+{0pt}{1ex plus 1ex minus .2ex}{0.8ex plus .2ex}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item}
+\let\endchangemargin=\endlist
+
+\author{Etash Jhanji\\\small Collaborators: Rohan Dalal}
+\title{PGSS:\ Math Finance HW 4}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item Because the bond makes payments of \$125 it can be represented as 5 payments of \$25
+        \begin{align*}
+            P&=5(P_0^A) = 5(97.67)\\
+            P&=\$448.35
+        \end{align*}
+        \item\begin{align*}
+            P&=10(P_0^Z) = 10(957)\\
+            P&=\$9570
+        \end{align*}
+        \item Represented as ZCBs, payments should be at $\frac{1}{4}, \frac{1}{2}, \frac{3}{4}, 1$. 
+        \begin{align*}
+            c&=F\cdot\frac{q}{m}\\
+            c&=10000\cdot\frac{0.05}{4}\\
+            c&=125
+        \end{align*}
+        The ZCB payments should be \$125 plus the face value at the end. 
+        \begin{align*}
+            F&=\sum_{i=1}^{4} \frac{125}{(1+\frac{0.05}{4})^{12/i}} + \frac{10000}{(1+\frac{0.05}{4})^{12}}\\
+            F&=463.09+8615.09\\
+            F&=9078.18\\
+        \end{align*}
+    \end{enumerate}
+    \item \begin{align*}
+        P&= \frac{500}{(1+\frac{.03}{12})^3} + \frac{500}{(1+\frac{.04}{12})^6} + \frac{500}{(1+\frac{.045}{12})^9} + \frac{500}{(1+\frac{.0475}{12})^{12}}\\
+        P&= \(\)$1946.67
+    \end{align*}
+\end{enumerate}
+\end{document}
