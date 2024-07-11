@@ -156,15 +156,37 @@ Interest rates depend on maturity.
     \item The notation is for maturity $T$ is $r=r(T)$
     \item e.g. Two year ZCB with a face of \$1000
     \begin{align*}
-        P^{Z} = \frac{F}{(1+\frac{r(2)(12)}{12})^{12\cdot2}}\\
+        P^{Z} = \frac{F}{(1+\frac{r(2)(12)}{12})^{12\cdot 2}}\\
         P^{Z} = \frac{1000}{(1+\frac{r(2)(12)}{12})^{24}}\\
     \end{align*}
 \end{itemize}
-An annurity makes monthly payments of \$100 for 5 years. 
+An annuity makes monthly payments of \$100 for 5 years. 
 \begin{align*}
     P^A&=\frac{100}{(1+\frac{r{1/12}}{12})^1} + \dots + \frac{100}{(1+\frac{r{5}}{12})^12\cdot5}
 \end{align*}
-Typically $r(t)$ follows a logarithmic function where longer periods require higher interest. However, some \textit{inverted yield curves} decrease as time increases. 
+Typically $r(t)$ follows a logarithmic function where longer periods require higher interest. However, some \textit{inverted yield curves} decrease as time increases. However, interest rates can change, thus we use $r(s,t)$ to denote the interest rate agreed to at time $s$ for deposits over the interval $[s, t]$
+
+So if we have at $t=0$, the price of a ZCB with a face value of \$1000 and maturity of 1 year will be
+\begin{align*}
+    P_0 &= \frac{1000}{(1+\frac{r(0,1)}{12})^{12}}
+\end{align*}
+The price of the same bond at time $s=\frac{1}{12}$ will be based on a deposit over the interval $[\frac{1}{12},1]$ or $[s,1]$ with interest $r(\frac{1}{12},1)$. The deposit of $A_{\frac{1}{12}}$ at time $\frac{1}{12}$ will grow to 
+\begin{align*}
+    A_1 &= A_{\frac{1}{12}}\left(1+\frac{r(\frac{1}{12},1)}{12}\right)^{11} = 1000
+\end{align*}
+\begin{align*}
+    P_{\frac{1}{12}} &= A_{\frac{1}{12}}
+\end{align*}
+
+The price of a bond at time $s$ with maturity $T$ is 
+\[
+    \frac{F}{\left( 1+ \frac{r(s,t)}{12} \right)^{12(T-s)}}
+\]
+Typically interest rates are positive. Bond prices and interest rates are inversely related (i.e. move in opposite directions).
+
+\subsection{Forward Interest Rates}
+A interest rate agreed to at a time 0 for a deposit or a loan at time $s>0$ with maturity $T>s>0$. This rate is denoted by $f(s, T)$. Although $r(s, T)$ is not known at time 0, $f(s, T)$ is, although they may be the same at time $s$ by chance.  
+
 
 \section{Fixed Income Securities}
 \subsection{Zero Coupon Bonds}
@@ -275,4 +297,21 @@ The arbitrage free price of a coupon bnd must be the sum of the arbitrage free p
 \end{align*}
 
 To find an arbitrage free price find a portfolio $X$ of securities who's prices are known that replicates the payments of the securities. The arbitrage free price is the initial capital of the portfolio. We say $X$ is a \textbf{replicating portfolio} of the security. Because of the \textit{Law of One Price} the replicating portfolios must have the same initial capital. 
+
+\subsection*{Example of Forward Interest Portfolios}
+Take portfolio $X$ which is composed of a loan (borrowing) 
+\[ \frac{1000}{\left( 1+ \frac{r(0,T)}{12} \right)^{12T}} \text{ over } [0,T] \]
+such that $X_T = 1000$. 
+
+Now take portfolio $Y$ which is a agreement to forward deposit 
+\[ \frac{1000}{\left( 1+ \frac{f(s,T)}{12} \right)^{12(T-s)}} \text{ over } [s,T] \]
+Thus depositing 
+\[ \frac{1000}{\left( 1+ \frac{f(s,T)}{12} \right)^{12(T-s)}\left( 1+ \frac{r(0,s)}{12} \right)^{12s}} \text{ over } [0,T] \]
+At time $s$ the deposit will grow to
+\[ \frac{1000}{\left( 1+ \frac{f(s,T)}{12} \right)^{12(T-s)}}\]
+and at time $T$ it will grow to exactly \$1000. 
+So $Y_T = 1000$, meaning by the Law of One Price since $X_T = Y_T=1000$ then $X_0 = Y_0$, and using some algebra we can derive
+\[
+    f(s,T) = 12{\left( \left[ \frac{(1+ \frac{f(0,T)}{12})^T}{(1+ \frac{f(0,s)}{12})^s} \right]^{\frac{1}{T-s}}-1 \right)}
+\]
 \end{document}
