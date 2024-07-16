@@ -1,0 +1,50 @@
+\documentclass[11pt,letterpaper]{article}
+\setlength{\marginparwidth}{2cm}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{textcomp}
+\usepackage{titlesec}
+\usepackage[colorinlistoftodos]{todonotes}
+\raggedbottom
+
+\titlespacing*{\subsubsection}
+{0pt}{1ex plus 1ex minus .2ex}{0.8ex plus .2ex}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item}
+\let\endchangemargin=\endlist
+
+\author{Etash Jhanji\\\small Collaborators: Micheal Huang}
+\title{PGSS:\ Math Finance HW 5}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item \begin{align*}
+            \frac{1000}{(1+\frac{r(0,1)}{12})^{12}} &= \frac{1000}{(1+\frac{0.03}{12})^{12}}\\
+            \frac{1000}{(1+\frac{0.03}{12})^{12}} &= 970.48\\
+            \frac{1000}{(1+\frac{0.03}{12})^{11}} &= 972.91\\
+        \end{align*}
+        \begin{center}Increased\end{center}
+        \item \begin{align*}
+            \frac{5000}{(1+\frac{r(0,5)}{12})^{12 \cdot 5}} &= \frac{5000}{(1+\frac{0.04}{12})^{60}}\\
+            \frac{5000}{(1+\frac{0.04}{12})^{60}} &= 4095.02\\
+            \frac{5000}{(1+\frac{0.041}{12})^{59}} &= 4088.58            \\
+        \end{align*}
+        \begin{center}Decreased\end{center}
+    \end{enumerate}
+    \item \begin{align*}
+        f(s,T) &= 12{\left( \left[ \frac{(1+ \frac{r(0,T)}{12})^T}{(1+ \frac{r(0,s)}{12})^s} \right]^{\frac{1}{T-s}}-1 \right)}\\
+        f\left(\frac{1}{2},2\right) &= 12{\left( \left[ \frac{\left(1+ \frac{r(0,2)}{12}\right)^2}{\left(1+ \frac{r\left(0,\frac{1}{2}\right)}{12}\right)^\frac{1}{2}} \right]^{\frac{1}{\frac{3}{2}}}-1 \right)}\\
+        f\left(\frac{1}{2},2\right) &= 12{\left( \left[ \frac{(1+ \frac{0.045}{12})^2}{\sqrt{1+ \frac{0.02}{12}}} \right]^{\frac{2}{3}}-1 \right)}\\
+        f\left(\frac{1}{2},2\right) &= 12(0.0044454069)\\
+        f\left(\frac{1}{2},2\right) &= 0.0533448828\\
+        f\left(\frac{1}{2},2\right) &\approx 0.05334 \text{ or } 5.334\%
+    \end{align*}
+\end{enumerate}
+\end{document}
