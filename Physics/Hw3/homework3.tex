@@ -1,0 +1,171 @@
+\documentclass[11pt,letterpaper, twocolumn]{article}
+\setlength{\marginparwidth}{2cm}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{esvect}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{enumitem}
+
+\raggedbottom
+
+\author{Etash Jhanji\\\small Collaborators: Josh (TA), Colin (TA), \\\small Nathan Banks, Rohan Dalal, Jeff Lin, Micheal Huang, Joshua Yuen, Coco Qu}
+\title{Physics HW 2}
+
+\begin{document}
+\maketitle
+
+\section{Lorentz Contraction}
+\begin{align*}
+    \begin{pmatrix}x'\\t'\end{pmatrix} &= \begin{pmatrix}\gamma & -\gamma\beta\\ -\gamma\beta & \gamma\end{pmatrix}\begin{pmatrix}x\\t\end{pmatrix} \\
+    x'&= \gamma x - \gamma\beta t\\
+    t'&= \gamma t - \gamma\beta x\\\\
+    t &= \frac{x}{\beta}\\\\
+    t' &= \gamma (t-\beta x)\\
+    t' &= \gamma \left(\frac{x}{\beta} - \beta x\right)\\
+    t' &= \gamma x \left(\frac{1}{\beta} - \beta \right)\\
+    t' &= \gamma x \left(\frac{1-\beta^2}{\beta}\right)\\
+    t' &= \gamma \beta t \left(\frac{1-\beta^2}{\beta}\right)\\
+    t' &= \gamma \beta \left(\frac{x}{\beta}\right) \left(\frac{1-\beta^2}{\beta}\right)\\
+    t' &= \gamma x \left(\frac{1}{\gamma^2\beta}\right)\\
+    t' &= \frac{x}{\gamma\beta}
+\end{align*}
+
+
+\section{Time Dilation}
+\begin{align*}
+    \begin{pmatrix}x'\\t'\end{pmatrix} &= \begin{pmatrix}\gamma & -\gamma\beta\\ -\gamma\beta & \gamma\end{pmatrix}\begin{pmatrix}x\\t\end{pmatrix} \\
+    x'&= \gamma x - \gamma\beta t\\
+    t'&= \gamma t - \gamma\beta x\\\\
+    x&=\beta t\\\\
+    t' &= \gamma t - \gamma\beta x\\
+    t' &= \gamma t - \gamma\beta^2 t\\
+    t' &= \gamma t (1 - \beta^2)\\
+    t' &= \gamma t \frac{1}{\gamma^2}\\
+    t' &= \frac{t}{\gamma}\\
+\end{align*}
+
+\section{Mass Conversion Examples}
+\begin{enumerate}
+    \item \begin{align*}
+        E&=mc^2\\
+        \frac{100 \text{J}}{\text{s}} \cdot 3.154\cdot 10^7 \text{s} &= m (3\cdot 10^8 \frac{\text{m}}{\text{s}})^2\\
+        3.154\cdot 10^9 \text{J}  &= m (9\cdot 10^8 \frac{\text{m}}{\text{s}})^2\\
+        \frac{3.154\cdot 10^9 \text{ kg $\cdot$ m$^2$}}{\text{s$^2$}}  &= m (9\cdot 10^{16} \frac{\text{m$^2$}}{\text{s$^2$}})\\
+        m&= \frac{3.154\cdot 10^9}{9\cdot 10^{16}}\text{ kg}\\
+        m&= \frac{3.154}{9\cdot 10^{7}}\text{ kg}\\
+        m&= 3.504\cdot 10^{-8}\text{ kg}
+    \end{align*}
+    \item \begin{align*}
+        E&=mc^2\\
+        1000\frac{\text{J}}{\text{s}} \cdot 310 \cdot 10^{12}\text{hr} &= m (3\cdot 10^8 \frac{\text{m}}{\text{s}})^2\\
+        1000\frac{\text{J}}{\text{s}} \cdot 1.116\cdot 10^{18}\text{s} &= m (3\cdot 10^8 \frac{\text{m}}{\text{s}})^2\\
+        1.116\cdot 10^{21} \frac{\text{ kg $\cdot$ m$^2$}}{\text{s$^2$}} &= m (9\cdot 10^{16} \frac{\text{m$^2$}}{\text{s$^2$}})\\
+        m &= \frac{1.116\cdot 10^{21}}{9\cdot 10^{16}}\text{ kg}\\
+        m &= \frac{1.138 \cdot 10^{5}}{9}\text{ kg}\\
+        m &= 1.264 \cdot 10^4\text{ kg}\\
+    \end{align*}
+    \item \begin{align*}
+        2 \text{hp} &= 1492 \text{W}\\
+        1 \text{lb} &= 4.53592 \cdot 10^{-1} \text{kg}\\
+        1492 \text{W} \cdot t &= 4.53592 \cdot 10^{-1}\text{ kg } ((3\cdot 10^8 \frac{\text{m}}{\text{s}})^2)\\
+        1492 \text{W} \cdot t &= 4.53592 \cdot 10^{-1}\text{ kg } (9\cdot 10^{16} \frac{\text{m$^2$}}{\text{s$^2$}})\\
+        1492 \frac{\text{J}}{\text{s}} \cdot t &= 4.082328 \cdot 10^{16} \frac{\text{ kg $\cdot$ m$^2$}}{\text{s$^2$}}\\
+        1492 \frac{\text{J}}{\text{s}} \cdot t &= 4.082328 \cdot 10^{16} \text{J}\\
+        t &= \frac{4.082328}{1492} \cdot 10^{16} \text{s}\\
+        t &= \frac{4.082328}{1492} \cdot 10^{16} \text{s}\\
+        t &= 2.7361448 \cdot 10^{13} \text{s}\\
+        t &\approx 867625 \text{ yrs}
+    \end{align*}
+    Humans lose weight via multiple pathways including, but not limited to, metabolism, heat, and sweat. 
+    \item \begin{align*}
+        \text{S.A. of the Earth} &= 5.1 \cdot 10^{14}\\
+        &\text{\textit{Wikipedia}}\\
+        \text{S.A. of the Earth under Light} &= 2.55 \cdot 10^{14}\\
+        \text{Power output of the Sun} &= 3.86 \cdot 10^{26} \text{W}\\
+        &\text{\textit{Australian Space}}\\&\text{\textit{Weather Forecasting}}\\& \text{\textit{Center}}\\
+    \end{align*}
+    \begin{align*}
+        E&= mc^2\\
+        3.86 \cdot 10^{26} \text{W} \cdot 1 \text{s} &= m (3\cdot 10^8 \frac{\text{m}}{\text{s}})^2\\
+        3.86 \cdot 10^{26} \text{J}&= m (9\cdot 10^{16} \frac{\text{m$^2$}}{\text{s$^2$}})\\
+        m &= \frac{3.86 \cdot 10^{26}}{9\cdot 10^{16}} \text{ kg}\\
+        m &= 4.289 \cdot 10^9 \text{kg lost per second}
+    \end{align*}
+    \begin{align*}
+        W&= (2.55 \cdot 10^{14})(1.4 \text{kW})\\
+        W&= 3.57 \cdot 10^{14} \text{kW}
+    \end{align*}
+    \begin{align*}
+        E&=mc^2\\
+        3.57 \cdot 10^{14} \text{kW} \cdot 3.154\cdot 10^7 \text{s} &= m (3\cdot 10^8 \frac{\text{m}}{\text{s}})^2\\
+        11.25978 \cdot 10^{21} \text{J} &= m (9\cdot 10^{16} \frac{\text{m$^2$}}{\text{s$^2$}})
+    \end{align*}
+    \begin{align*}
+        m&= \frac{11.25978 \cdot 10^{21}}{9\cdot 10^{16}} \text{ kg}\\
+        m&= 1.251 \cdot 10^{5} \text{ kg in one year}
+    \end{align*}
+    \item \begin{align*}
+        E_i &= 2\left[\frac{1}{2}mv^2\right]\\
+        E_i &= (10^8)(44.704)^2\\
+        E_i &= (10^8)(1998.448)\\
+        E_i &= 1.998 \cdot 10^{11} \text{J}
+    \end{align*}
+    \begin{align*}
+        E&=mc^2\\
+        1.998 \cdot 10^{11} \text{J}&= m (9\cdot 10^{16} \frac{\text{m$^2$}}{\text{s$^2$}})\\
+        m &= \frac{1.998 \cdot 10^{11}}{9\cdot 10^{16}} \text{ kg}\\
+        m &= \frac{1.998}{9\cdot 10^{5}} \text{ kg}\\
+        m &= 0.222 \cdot 10^{-5} \text{ kg}
+    \end{align*}
+\end{enumerate}
+
+\section{Relativistic Proton Collisions}
+\begin{align*}
+    E_i &= \gamma m + m\\
+    E_f &= 2\gamma_f m\\
+    P_i &= \gamma m \beta\\
+    P_f &= 2\gamma_f m \beta_f \cos\theta\\
+\end{align*}
+\begin{align*}
+    \gamma m \beta &= 2 \gamma_f m \beta_f \cos\theta\\
+    \gamma \beta &= 2 \gamma_f \beta_f \cos\theta\\\\
+    \gamma m + m &= 2 \gamma_f m\\
+    \frac{\gamma+1}{2} &= \gamma_f\\\\
+    \sqrt{\gamma^2 - 1} &= 2\sqrt{\gamma_f^2 - 1}\cos\theta\\
+    \sqrt{\gamma^2 - 1} &= 2\sqrt{\left(\frac{\gamma+1}{2}\right)^2 - 1}\cos\theta\\
+    \cos \theta &= \frac{\sqrt{\gamma^2 - 1}}{2\sqrt{\left(\frac{\gamma+1}{2}\right)^2 - 1}}\\
+    \cos \theta &= \sqrt{\frac{\gamma^2 - 1}{\gamma^2  + 2\gamma -3}}\\
+    \cos \theta &= \sqrt{\frac{(\gamma - 1)(\gamma +1)}{(\gamma - 1 ) (\gamma +3)}}\\
+    \cos \theta &= \sqrt{\frac{\gamma +1}{\gamma +3}}\\
+    \theta &= \arccos \sqrt{\frac{\gamma +1}{\gamma +3}}
+\end{align*}
+\begin{align*}
+    \cos^2 \frac{50\pi-1}{200} &= \frac{\gamma +1}{\gamma +3}\\
+    (\gamma +3)\left(\cos^2 \frac{50\pi-1}{200}\right) &= \gamma +1\\
+    \gamma\left(\cos^2 \frac{50\pi-1}{200}\right) - \gamma &=1 - 3\left(\cos^2 \frac{50\pi-1}{200}\right) \\
+    \gamma\left[\left(\cos^2 \frac{50\pi-1}{200}\right) - 1\right] &=1 - 3\left(\cos^2 \frac{50\pi-1}{200}\right) \\
+    \gamma &= \frac{1 - 3\left(\cos^2 \frac{50\pi-1}{200}\right)}{\left(\cos^2 \frac{50\pi-1}{200}\right) - 1} \\
+    \gamma &= 1.0404\\
+    \frac{1}{\sqrt{1-\beta^2}} &= 1.0404\\
+    \frac{1}{1-\beta^2} &= 1.0824\\
+    1 &= 1.0824-1.0824\beta^2\\
+    0.0824 &= 1.0824\beta^2\\
+    \beta &= \sqrt{\frac{0.0824}{1.0824}}\\
+    \beta &= 0.276\\
+    \frac{v}{c}&=0.276\\
+    v&=0.276c\\ 
+    v&=8.28\cdot 10^7 \frac{\text{m}}{\text{s}}\\ 
+\end{align*}
+\begin{align*}
+    \theta &= \arccos \sqrt{\frac{\gamma +1}{\gamma +3}}\\
+    \theta &= \arccos \sqrt{\frac{(1.0404) +1}{(1.0404) +3}}\\
+    \theta &= \arccos \sqrt{0.505}\\
+    \theta &= \arccos 0.711\\
+    \theta &= 0.78 \text{ rad}
+\end{align*}
+
+\end{document}
